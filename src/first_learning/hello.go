@@ -52,7 +52,4 @@ func main() {
 	fmt.Println(Friday)
 	fmt.Println(Saturday)
 	fmt.Println(Sunday)
-
-
-
 }
