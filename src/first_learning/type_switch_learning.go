@@ -5,7 +5,7 @@ import (
 )
 
 type PhoneConnector2 struct {
-	name string
+	PhoneConnector3
 }
 
 type PhoneConnector3 struct {
@@ -13,7 +13,7 @@ type PhoneConnector3 struct {
 }
 
 func main() {
-	a := PhoneConnector2{"PhoneConnector2 Tester"}
+	a := PhoneConnector2{PhoneConnector3: PhoneConnector3{"PhoneConnector2 Tester"},}
 	Disconnect(a)
 
 	b := PhoneConnector3{"PhoneConnector3 Tester"}
@@ -22,7 +22,7 @@ func main() {
 
 func Disconnect(usb interface{}) {
 	switch v := usb.(type) {
-	case PhoneConnector2:
+	case PhoneConnector3:
 		fmt.Println("Disconnected: ", v.name)
 	default:
 		fmt.Println("Unknown device.")
