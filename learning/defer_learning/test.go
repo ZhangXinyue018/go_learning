@@ -18,9 +18,23 @@ func (test *Test) Hello() () {
 	fmt.Println(test.Name)
 }
 
-func main() {
+func Test1() () {
 	newTest := GetTest()
 	defer newTest.Hello()
 	name := newTest.Name
 	fmt.Println("get name" + name)
+}
+
+func Test2() () {
+	defer func() {
+		if x := recover(); x != nil {
+			//panic("test")
+			fmt.Println("ignore panic")
+		}
+	}()
+	panic("ENTER")
+}
+
+func main() {
+	Test2()
 }
