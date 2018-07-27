@@ -2,11 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
+	"sort"
 )
 
 func main() {
-	rand.Seed(time.Now().Unix())
-	fmt.Println(rand.Int())
+
 }

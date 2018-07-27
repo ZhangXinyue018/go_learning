@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main()  {
@@ -21,4 +22,25 @@ func main()  {
 	fmt.Println(m1)
 	//b, ok := m1[2][1]
 	//fmt.Println(b, ok)
+
+
+	SortTest()
+}
+
+
+func SortTest()(){
+	a := map[string]interface{}{}
+	a["a_test"] = 1
+	a["m_test"] = "hello"
+	a["b_test"] = 12.34
+
+	var keys []string
+	for k := range a {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		fmt.Println("Key:", key, "Value:", a[key])
+	}
 }
