@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"time"
+	"math/rand"
 )
 
 func main() {
 	//StupidTest()
 	//ChannelTest()
-	ForRangeChannelTest()
+	//ForRangeChannelTest()
+	ForSelectChannelTest()
 }
 
 func StupidTest() {
@@ -40,4 +42,24 @@ func ForRangeChannelTest() {
 	for v := range c {
 		fmt.Println(v)
 	}
+}
+
+func ForSelectChannelTest() {
+	c := make(chan bool, 10) //非阻塞
+	remark := make(chan bool) //阻塞
+	go func() {
+		for {
+			select {
+			case temp := <-c:
+				fmt.Println(temp)
+			}
+		}
+	}()
+	go func() {
+		for {
+			time.Sleep(2 * time.Second)
+			c <- rand.Float64() > 0.5
+		}
+	}()
+	<-remark
 }

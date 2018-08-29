@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// defer is activated just before return
+// defer can be used to catch errors or calculate time
+
 func GetTest() (*Test) {
 	test := Test{Name: "123"}
 	fmt.Println("enter test")
