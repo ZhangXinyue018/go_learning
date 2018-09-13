@@ -20,5 +20,6 @@ func main()  {
 	m1[1][1] = "ok"
 	fmt.Println(m1)
 	//b, ok := m1[2][1]
+	//ok输出键值对是否存在
 	//fmt.Println(b, ok)
 }
