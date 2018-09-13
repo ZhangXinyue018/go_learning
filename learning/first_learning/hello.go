@@ -30,6 +30,17 @@ const (
 )
 
 func main() {
+	ParamTest(1, "hello", 12.5)
+}
+
+func ParamTest(params...interface{})(){
+	test_a, test_b, test_c := params[0], params[1], params[2]
+	fmt.Println(test_a.(int))
+	fmt.Println(test_b)
+	fmt.Println(test_c)
+}
+
+func BasicTest()(){
 	fmt.Println("Hello Go!中文测试")
 	fmt.Println(PI)
 	fmt.Println(testConst)
