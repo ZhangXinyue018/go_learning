@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 type TestA struct {
@@ -10,19 +9,12 @@ type TestA struct {
 }
 
 func main() {
-	Test2()
+	Test1()
 }
 
 func Test1() () {
-	var a string
+	var a []int
 	fmt.Println(len(a))
-
-	var testA TestA
-	fmt.Printf("%p\n", &testA)
-
-	var stringA = "1"
-	intA, _ := strconv.Atoi(stringA)
-	fmt.Println(intA)
 }
 
 func Test2() () {
@@ -30,6 +22,7 @@ func Test2() () {
 	test := "这是一个aaaaa的奇怪测试"
 	for index, value := range test{
 		fmt.Printf("%d: %s \n", index, string(value))
+		//fmt.Println(reflect.TypeOf(value))
 	}
 	fmt.Println(len(test))
 }
