@@ -14,6 +14,9 @@ func main() {
 	//sign(getHash())
 	//TempTest()
 	//TempTestSort()
+	s := "abcd"
+	fmt.Println(s[:1])
+	fmt.Println(s[2:])
 
 }
 
