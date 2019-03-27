@@ -44,8 +44,16 @@ func Info(o interface{}) {
 	}
 }
 
+func changeValue(){
+	x := 123
+	a := reflect.ValueOf(&x)
+	a.Elem().SetInt(999)
+	fmt.Println(x)
+
+}
+
 func main() {
-	u := User{1, "OK", 12, Test{"HAHAHAHHA"}}
-	Info(u)
-	
+	//u := User{1, "OK", 12, Test{"HAHAHAHHA"}}
+	//Info(u)
+	changeValue()
 }

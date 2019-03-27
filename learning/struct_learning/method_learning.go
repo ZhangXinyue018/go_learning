@@ -20,6 +20,6 @@ func (test TestMethodType) Print() {
 	fmt.Println("test method")
 }
 
-func(test *TestMethodType) Add(){
+func (test *TestMethodType) Add() {
 	test.Age ++
 }

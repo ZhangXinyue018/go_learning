@@ -14,10 +14,28 @@ func main() {
 	//sign(getHash())
 	//TempTest()
 	//TempTestSort()
-	s := "abcd"
-	fmt.Println(s[:1])
-	fmt.Println(s[2:])
+	//s := "abcd"
+	//fmt.Println(s[:1])
+	//fmt.Println(s[2:])
+	nums := []int{0, 1, 2}
+	fmt.Println(nums)
+	test(nums)
+	fmt.Println(nums)
 
+	//numsTemp := nums[:2]
+	//fmt.Println(nums)
+	//test(numsTemp)
+	//fmt.Println(nums)
+	//fmt.Println(&nums)
+	//fmt.Println(&numsTemp)
+
+}
+
+func test(nums []int) () {
+	//nums = append(nums, 1)
+	//nums = append(nums, 2)
+	nums[0] = 1
+	fmt.Println(nums)
 }
 
 func TempTest() () {
