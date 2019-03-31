@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 var (
@@ -19,6 +20,7 @@ func main() {
 	go ChangeTemp(TempValue)
 	go ChangeTemp(TempValue)
 	wg.Wait()
+	//MockContextCase()
 }
 
 func ChangeTemp(temp *Temp){
@@ -26,4 +28,21 @@ func ChangeTemp(temp *Temp){
 	temp.Test = 5
 	fmt.Println(temp)
 	wg.Done()
+}
+
+
+func MockContextCase(){
+	fmt.Println(time.Now())
+	NewTestOutside()
+	fmt.Println(time.Now())
+}
+
+func NewTestOutside(){
+	go NewTest()
+	time.Sleep(5*time.Second)
+}
+
+func NewTest(){
+	time.Sleep(10 * time.Second)
+	fmt.Println("I'm done")
 }
